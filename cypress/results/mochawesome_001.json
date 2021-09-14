@@ -1,0 +1,219 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 7,
+    "passes": 7,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-09-13T03:00:13.305Z",
+    "end": "2021-09-13T03:00:38.788Z",
+    "duration": 25483,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c710f18a-cee4-448d-aad5-53cc82b0f22e",
+      "title": "",
+      "fullFile": "cypress/integration/1-shell-web/shell-bi.js",
+      "file": "cypress/integration/1-shell-web/shell-bi.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "576c9d93-8090-4fc3-bf0e-c015a157facb",
+          "title": "shell-web",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "login",
+              "fullTitle": "shell-web login",
+              "timedOut": null,
+              "duration": 4351,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://b2b.digitalshell.com.cn/shell/bi/#/').get('#kc-page-logo').should('be.visible').get('#username').clear().type('xcli@thoughtworks.com').get('#password').clear().type('Xcli@thoughtworks.com1').get('#kc-login').click().get('.logo').should('be.visible') //shell logo\n.get('#page > div.sh-side-bar.side-bar > div.title-bar > ul > li.active').should('contain', '设备概览'); //高亮第一个",
+              "err": {},
+              "uuid": "0309f091-b095-43fc-bbe4-70c08ccc172b",
+              "parentUUID": "576c9d93-8090-4fc3-bf0e-c015a157facb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "equipment",
+              "fullTitle": "shell-web equipment",
+              "timedOut": null,
+              "duration": 3271,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.el-input__inner').wait(3000).click().type('鑫海').should('have.value', '鑫海') //输入框\n.get('.btn_light').should('be.visible') //地图概览的按钮\n.get('.search-count').should('be.visible'); //设备概览的统计",
+              "err": {},
+              "uuid": "b17f1e21-9293-4f11-b7c1-d2fb8c313efe",
+              "parentUUID": "576c9d93-8090-4fc3-bf0e-c015a157facb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "map",
+              "fullTitle": "shell-web map",
+              "timedOut": null,
+              "duration": 4285,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.btn_light').click().wait(2000).get('.map-content').should('be.visible'); //地图\ncy.contains('返回首页').click().wait(2000);",
+              "err": {},
+              "uuid": "42bcb8b0-2ba1-4066-aa56-a22d47ea3d6a",
+              "parentUUID": "576c9d93-8090-4fc3-bf0e-c015a157facb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "monitor",
+              "fullTitle": "shell-web monitor",
+              "timedOut": null,
+              "duration": 4370,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('实时监测').click().wait(2000).get('.logo').should('be.visible').get('.btn_light').click().wait(2000).get('.logo-container').should('be.visible');\ncy.contains('返回首页').click().get('.logo').should('be.visible'); //返回首页shell logo",
+              "err": {},
+              "uuid": "bc6c0c51-5900-4746-b7c4-6296b5815c69",
+              "parentUUID": "576c9d93-8090-4fc3-bf0e-c015a157facb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "dataReport",
+              "fullTitle": "shell-web dataReport",
+              "timedOut": null,
+              "duration": 139,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('数据报表').click().get('#page > div.sh-side-bar.side-bar > div.title-bar > ul > li.active').should('contain', '数据报表'); //高亮实时监测",
+              "err": {},
+              "uuid": "f4da463a-63eb-4522-8d6f-054f2225a73b",
+              "parentUUID": "576c9d93-8090-4fc3-bf0e-c015a157facb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "heathReport",
+              "fullTitle": "shell-web heathReport",
+              "timedOut": null,
+              "duration": 2223,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('健康报告').click().get('#page > div.sh-side-bar.side-bar > div.title-bar > ul > li.active').should('contain', '健康报告') //高亮健康报告\n.wait(2000);",
+              "err": {},
+              "uuid": "2b18d8a1-a78f-4a8b-986c-742ccd144a89",
+              "parentUUID": "576c9d93-8090-4fc3-bf0e-c015a157facb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "operationPlatform",
+              "fullTitle": "shell-web operationPlatform",
+              "timedOut": null,
+              "duration": 5447,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('运维平台').click().wait(2000);\ncy.get('body > div.main > div > div > div.main-content-menu > div.menu-content > ul > li.el-menu-item.is-active').should('contain', '数采设备') //高亮数彩设备// .\n.wait(2000);\ncy.contains('首页').click();",
+              "err": {},
+              "uuid": "b37f0496-aa9a-4c58-8bc4-7249c1ff51c3",
+              "parentUUID": "576c9d93-8090-4fc3-bf0e-c015a157facb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0309f091-b095-43fc-bbe4-70c08ccc172b",
+            "b17f1e21-9293-4f11-b7c1-d2fb8c313efe",
+            "42bcb8b0-2ba1-4066-aa56-a22d47ea3d6a",
+            "bc6c0c51-5900-4746-b7c4-6296b5815c69",
+            "f4da463a-63eb-4522-8d6f-054f2225a73b",
+            "2b18d8a1-a78f-4a8b-986c-742ccd144a89",
+            "b37f0496-aa9a-4c58-8bc4-7249c1ff51c3"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 24086,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

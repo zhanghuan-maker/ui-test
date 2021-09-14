@@ -12,6 +12,10 @@ describe('shell-web', function() {
       .get('#kc-login').click()
       .get('.logo').should('be.visible')//shell logo
       .get('#page > div.sh-side-bar.side-bar > div.title-bar > ul > li.active').should('contain','设备概览')//高亮第一个
+      .get('.icon-chevrons-right.rotate').should('be.visible')
+    cy.get('.icon-chevrons-right.rotate').click()//箭头
+      .get('.icon-chevrons-right').should('be.visible')
+    cy.get('.icon-chevrons-right').click()
   })
   it('equipment', function() {
     cy.get('.el-input__inner')
@@ -20,6 +24,7 @@ describe('shell-web', function() {
       .type('鑫海').should('have.value','鑫海')//输入框
       .get('.btn_light').should('be.visible')//地图概览的按钮
       .get('.search-count').should('be.visible')//设备概览的统计
+      .get('.icon-filter').should('be.visible')//筛选按钮
   })
   it('map', function() {
      cy.get('.btn_light').click()
@@ -41,18 +46,41 @@ describe('shell-web', function() {
   it('dataReport',function (){
     cy.contains('数据报表').click()
       .get('#page > div.sh-side-bar.side-bar > div.title-bar > ul > li.active').should('contain','数据报表')//高亮实时监测
+        .get('.btn.btn--active').children().should('contain','设备信息')//高亮设备信息
+    cy.contains('服务工单').click()
+        .wait(5000)
+        .get('.btn.btn--active').children().should('contain','服务工单')//高亮服务工单
+    cy.contains('维保记录').click()
+        .wait(5000)
+        .get('.btn.btn--active').children().should('contain','维保记录')//高亮维保记录
+    cy.contains('自定义维保记录').click()
+        .wait(5000)
+        .get('.btn.btn--active').children().should('contain','自定义维保记录')//高亮自定义维保记录
   })
   it('heathReport',function (){
     cy.contains('健康报告').click()
       .get('#page > div.sh-side-bar.side-bar > div.title-bar > ul > li.active').should('contain','健康报告')//高亮健康报告
         .wait(2000)
+    cy.get('.add-btn').should('be.visible')//创建报告的按钮
+  })
+  it('manageIBC',function (){
+    cy.contains('管理IBC').click()
+        .get('#page > div.sh-side-bar.side-bar > div.title-bar > ul > li.active').should('contain','管理IBC')//高亮管理IBC
   })
   it('operationPlatform',function (){
     cy.contains('运维平台').click()
         .wait(2000)
-    cy.get('body > div.main > div > div > div.main-content-menu > div.menu-content > ul > li.el-menu-item.is-active').should('contain','数采设备')//高亮数彩设备// .
+    cy.get('.el-menu-item.is-active').should('contain','数采设备')//高亮数彩设备// .
         .wait(2000)
-    cy.contains('首页').click()
+    cy.contains('网关烧录').click()
+        .wait(2000)
+        .get('.el-menu-item.is-active').should('contain','网关烧录')//高亮网关烧录//
+    cy.contains('监测点管理').click()
+        .wait(2000)
+        .get('.el-menu-item.is-active').should('contain','监测点管理')//高亮监测点管理//
+    cy.contains('告警列表').click()
+        .wait(2000)
+        .get('.el-menu-item.is-active').should('contain','告警列表')//高亮告警列表//
+    cy.contains('返回首页').click()
   })
-
 })
