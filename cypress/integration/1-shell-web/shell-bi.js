@@ -40,6 +40,7 @@ describe('shell-web', function() {
         .get('.btn_light').click()
         .wait(2000)
         .get('.logo-container').should('be.visible')
+        .get('.el-checkbox-group').should('be.visible')//监测点列表
    cy.contains('返回首页').click()
       .get('.logo').should('be.visible')//返回首页shell logo
   })
