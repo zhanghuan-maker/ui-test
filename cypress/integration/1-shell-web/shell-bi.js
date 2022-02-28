@@ -7,18 +7,20 @@ describe('shell-web', function() {
   it('login', function() {
     cy.visit('https://b2b.digitalshell.com.cn/shell/bi/#/')
       .get('#kc-page-logo').should('be.visible')
-      .get('#username').clear().type('xcli@thoughtworks.com')
-      .get('#password').clear().type('Xcli@thoughtworks.com1')
+      .get('#username').clear().type('huan.zhang@thoughtworks.com')
+      .get('#password').clear().type('678728aB#')
       .get('#kc-login').click()
       .get('.logo').should('be.visible')//shell logo
-      .get('#page > div.sh-side-bar.side-bar > div.title-bar > ul > li.active').should('contain','设备概览')//高亮第一个
+      .get('#page > div.sh-side-bar.side-bar > div.title-bar > ul > li.active').should('contain','首页')//高亮第一个
       .get('.icon-chevrons-right.rotate').should('be.visible')
     cy.get('.icon-chevrons-right.rotate').click()//箭头
       .get('.icon-chevrons-right').should('be.visible')
     cy.get('.icon-chevrons-right').click()
   })
   it('equipment', function() {
-    cy.get('.el-input__inner')
+    cy.contains('设备概览').click()
+      .wait(3000)
+      .get('.el-input__inner')
       .wait(3000)
       .click()
       .type('鑫海').should('have.value','鑫海')//输入框
